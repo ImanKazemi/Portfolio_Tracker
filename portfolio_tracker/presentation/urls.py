@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from .views import DataView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('data/<collection>/', DataView.as_view(), name='data-view'),
 ]
